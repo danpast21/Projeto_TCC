@@ -17,7 +17,7 @@ Dúvidas frequentes sobre matrícula, processo seletivo, cursos, assistência es
 - OpenAI API (somente backend)
 - Fetch HTTP para consulta em tempo real do site oficial
 
-## 4. Instalação
+## 4. Instalação.
 
 ```bash
 npm install
