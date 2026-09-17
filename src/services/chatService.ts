@@ -4,7 +4,7 @@ export interface ChatApiResponse {
 
 
 const FRIENDLY_ERROR =
-  "Não foi possível consultar o assistente no momento. Tente novamente mais tarde.";
+  "ERRO: ";  
 
 
 export async function sendQuestionToApi(
@@ -29,7 +29,11 @@ export async function sendQuestionToApi(
 
     const data = await response.json();
 
+const asError = data as { error?: unknown };
 
+if (!response.ok) {
+    throw new Error(JSON.stringify(data));
+}
     if (!response.ok) {
       throw new Error(
         data.error || FRIENDLY_ERROR
