@@ -14,11 +14,11 @@ export async function sendQuestionToApi(
   try {
 
     const response = await fetch(
-      "http://localhost:3001/api/chat",
+      "https://script.google.com/macros/s/AKfycbzwpEDIRgXzpz24KfB1yto4iDvbLsSmu467n5l8ZwD8Ii2Y3--JGi34_7bomEs5EGRwqw/exec",
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify({
           question: question,
@@ -29,11 +29,6 @@ export async function sendQuestionToApi(
 
     const data = await response.json();
 
-const asError = data as { error?: unknown };
-
-if (!response.ok) {
-    throw new Error(JSON.stringify(data));
-}
     if (!response.ok) {
       throw new Error(
         data.error || FRIENDLY_ERROR
